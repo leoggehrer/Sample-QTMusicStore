@@ -1,0 +1,32 @@
+﻿@*@CustomCode*@
+@{
+    @using QTMusicStore.AspMvc.Modules.Session
+
+    var sessionWrapper = new SessionWrapper(Context.Session);
+
+    <ul class="navbar-nav flex-grow-1">
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">@("Home")</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Genres" asp-action="Index">@("Genres")</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Artists" asp-action="Index">@("Artists")</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Albums" asp-action="Index">@("Albums")</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Tracks" asp-action="Index">@("Tracks")</a>
+        </li>
+        @*#if ACCOUNT_ON*@@*
+            @if (sessionWrapper.LoginSession != null)
+            {
+            }
+        *@@*#endif*@
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Contact">@("Contact")</a>
+        </li>
+    </ul>
+}
